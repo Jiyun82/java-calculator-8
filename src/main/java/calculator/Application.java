@@ -10,7 +10,7 @@ public class Application {
         String input = scanner.nextLine();
 
         if (Character.isDigit(input.charAt(0))) { // 기본 구분자
-            System.out.println("기본");
+            input = input.replace(',', ' ').replace(':', ' ');
         } else if (input.startsWith("//")) { // 커스텀 구분자
             System.out.println("커스텀");
         } else { // 그 외
