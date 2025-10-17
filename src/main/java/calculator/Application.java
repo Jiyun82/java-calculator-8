@@ -20,6 +20,9 @@ public class Application {
                     throw new IllegalArgumentException("커스텀 구분자 지정 형식이 올바르지 않습니다.");
                 }
                 sep = input.substring(2, 3);
+                if (isNumberic(sep)) {
+                    throw new IllegalArgumentException("숫자는 구분자로 지정할 수 없습니다.");
+                }
                 input = input.substring(5);
             } else { // 그 외
                 throw new IllegalArgumentException("입력은 양수 또는 //로 시작해야 합니다.");
