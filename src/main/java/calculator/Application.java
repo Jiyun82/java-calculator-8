@@ -17,12 +17,12 @@ public class Application {
                 input = input.replace(',', ' ').replace(':', ' ');
             } else if (input.startsWith("//")) { // 커스텀 구분자
                 if (input.indexOf("\\n") != 3) {
-                    throw new IllegalArgumentException();
+                    throw new IllegalArgumentException("커스텀 구분자 지정 형식이 올바르지 않습니다.");
                 }
                 sep = input.substring(2, 3);
                 input = input.substring(5);
             } else { // 그 외
-                throw new IllegalArgumentException();
+                throw new IllegalArgumentException("입력은 양수 또는 //로 시작해야 합니다.");
             }
 
             // split 해서 더함
@@ -30,11 +30,11 @@ public class Application {
                 String[] parts = input.split(Pattern.quote(sep));
                 for (String part : parts) {
                     if (!isNumberic(part)) {
-                        throw new IllegalArgumentException();
+                        throw new IllegalArgumentException("구분자와 양수로 구성된 문자열을 입력해주세요.");
                     }
                     double n = Double.parseDouble(part);
                     if (n < 0) {
-                        throw new IllegalArgumentException();
+                        throw new IllegalArgumentException("구분자와 양수로 구성된 문자열을 입력해주세요.");
                     }
                     sum += Double.parseDouble(part);
                 }
