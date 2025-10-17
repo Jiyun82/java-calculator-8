@@ -32,6 +32,10 @@ public class Application {
                     if (!isNumberic(part)) {
                         throw new IllegalArgumentException();
                     }
+                    double n = Double.parseDouble(part);
+                    if (n < 0) {
+                        throw new IllegalArgumentException();
+                    }
                     sum += Double.parseDouble(part);
                 }
             }
