@@ -33,6 +33,12 @@ public class Application {
             sum += Double.parseDouble(part);
         }
 
+        if (sum == Math.floor(sum)) {
+            System.out.println("결과: " + (int) sum);
+        } else {
+            System.out.println("결과: " + sum);
+        }
+
     }
 
     public static boolean isNumberic(String str) {
