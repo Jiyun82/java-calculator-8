@@ -46,9 +46,9 @@ public class Application {
         }
 
         if (sum == Math.floor(sum)) {
-            System.out.println("결과: " + (int) sum);
+            System.out.println("결과 : " + (int) sum);
         } else {
-            System.out.println("결과: " + sum);
+            System.out.println("결과 : " + sum);
         }
 
     }
